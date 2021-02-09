@@ -1,4 +1,4 @@
-package org.gourav;
+package org.gourav.stocks;
 
 import org.gourav.domain.SP500;
 import org.junit.jupiter.api.Disabled;

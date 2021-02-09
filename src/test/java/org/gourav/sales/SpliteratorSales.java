@@ -1,4 +1,4 @@
-package org.gourav;
+package org.gourav.sales;
 
 import org.gourav.domain.Sales;
 

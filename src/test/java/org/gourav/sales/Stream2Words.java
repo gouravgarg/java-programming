@@ -1,6 +1,7 @@
-package org.gourav;
+package org.gourav.sales;
 
 import org.gourav.domain.Sales;
+import org.gourav.sales.SpliteratorSales;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
