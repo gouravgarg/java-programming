@@ -14,6 +14,7 @@ public class TestHostingList2Map {
 
     @Test
     public void testList2Map(){
+
         List<Hosting> list = new ArrayList<>();
         list.add(new Hosting(1, "liquidweb.com", 80000));
         list.add(new Hosting(2, "linode.com", 90000));
@@ -40,6 +41,7 @@ public class TestHostingList2Map {
      */
     @Test
     public void testList2MapGroupBy(){
+
         List<Hosting> list = new ArrayList<>();
         list.add(new Hosting(1, "liquidweb.com", 80000));
         list.add(new Hosting(2, "linode.com", 90000));
@@ -49,7 +51,7 @@ public class TestHostingList2Map {
 
         list.add(new Hosting(6, "digitalocean.com", 0));
 
-        Map<String, Hosting> result1 = list.stream().collect(Collectors.toMap(Hosting::name,Function.identity()));
+     //   Map<String, Hosting> result1 = list.stream().collect(Collectors.toMap(Hosting::name,Function.identity()));
 
         Map<String, Long> result = list.stream().collect(Collectors.toMap(Hosting::name,Hosting::hosting,(oldValue, newValue)->oldValue));
         System.out.println(result);

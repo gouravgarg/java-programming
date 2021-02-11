@@ -39,12 +39,12 @@ public class TestMilage {
         // System.out.println(milage.getPassengerMilageMap());
     }
 
-    @AfterAll
-    void testCalculateGivenPoint(){
-        milage.calculateGivenPoint();
-        Assertions.assertEquals(20,milage.getPassengerPointMap().get(usualPassengerSaytam));
-        Assertions.assertEquals(300,milage.getPassengerPointMap().get(vipPassengerShashi));
-        System.out.println(milage.getPassengerPointMap());
-    }
+//    @AfterAll
+//    void testCalculateGivenPoint(){
+//        milage.calculateGivenPoint();
+//        Assertions.assertEquals(20,milage.getPassengerPointMap().get(usualPassengerSaytam));
+//        Assertions.assertEquals(300,milage.getPassengerPointMap().get(vipPassengerShashi));
+//        System.out.println(milage.getPassengerPointMap());
+//    }
 
 }

@@ -1,7 +1,9 @@
 package org.gourav.flight;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.TreeSet;
 
 public class Milage {
 
@@ -14,6 +16,9 @@ public class Milage {
     public Map<Passenger, Long> getPassengerPointMap() {
         return passengerPointMap;
     }
+
+    HashSet hashSet ;
+    TreeSet treeSet;
 
 
     public void addMilage(Passenger passenger, long miles){
