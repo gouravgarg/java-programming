@@ -12,7 +12,7 @@ RUN mvn clean package                   #shell form
 FROM openjdk:15.0.1
 
 # copy only the artifacts we need from the first stage and discard the rest
-COPY --from=MAVEN_BUILD_JAVA_PROG_GG /target/*.jar /app.jar
+COPY --from=MAVEN_BUILD_JAVA_PROG_GG /target/*.jar /java-programming.jar
 
 # set the startup command to execute the jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/java-programming.jar"]
