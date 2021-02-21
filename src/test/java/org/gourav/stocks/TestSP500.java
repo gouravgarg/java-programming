@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestSP500 {
     List<SP500> sp500s = new ArrayList<>();
     private long numberOfRows = 23267;
-    private String sourceFile = "GSPC.csv";
+    private String sourceFile = "src/test/resources/GSPC.csv";
     private LocalDate closeLowestDate = LocalDate.parse("1932-06-01");
     private LocalDate closeHighestDate = LocalDate.parse("2020-02-19");
     private java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");

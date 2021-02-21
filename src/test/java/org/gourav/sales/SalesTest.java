@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SalesTest {
 
-    java.nio.file.Path path = java.nio.file.Paths.get("/home/gourav/Downloads/sales.csv");
+    java.nio.file.Path path = java.nio.file.Paths.get("src/test/resources/sales.csv");
     private List<Sales> salesList = new ArrayList<>();
 
     @Test

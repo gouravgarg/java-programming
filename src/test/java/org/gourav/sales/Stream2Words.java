@@ -20,9 +20,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Stream2Words {
 
     @Test
-    public void testStream2Word(){
+    public void testStream2Word() throws IOException {
 
-        java.nio.file.Path path = Paths.get("/home/gourav/Downloads/sales.csv");
+        java.nio.file.Path path = Paths.get("src/test/resources/sales.csv");
 
         try(Stream<String> stringStream = Files.lines(path);){
 
@@ -32,21 +32,18 @@ public class Stream2Words {
 
            // System.out.println(wordsStream.count());
 
-            Files.write(Paths.get("/home/gourav/Downloads/sales2.csv"), (Iterable<String>)wordsStream::iterator);
+            Files.write(Paths.get("sales2.csv"), (Iterable<String>)wordsStream::iterator);
 
 
-        }catch(IOException ioException){
-            ioException.printStackTrace();
         }
-
 
 
     }
 
     @Test
-    public void  testCustomSplitator(){
+    public void  testCustomSplitator() throws IOException {
         System.out.println( LocalDateTime.now());
-        java.nio.file.Path path = Paths.get("/home/gourav/Downloads/sales2.csv");
+        java.nio.file.Path path = Paths.get("src/test/resources/sales2.csv");
 
         try(Stream<String> stringStream = Files.lines(path);){
 
@@ -59,8 +56,6 @@ public class Stream2Words {
             assertEquals(500000,salesStream.count());
 
             System.out.println( LocalDateTime.now());
-        }catch(IOException ioException){
-            ioException.printStackTrace();
         }
     }
 }
