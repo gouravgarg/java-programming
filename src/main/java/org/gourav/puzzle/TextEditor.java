@@ -1,6 +1,8 @@
-package org.gourav;
+package org.gourav.puzzle;
 
 public class TextEditor {
+
+
     static class Char { // line 1
         char c;
         public Char(char c) {
