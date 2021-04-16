@@ -1,6 +1,6 @@
 package org.gourav.puzzle;
 
-public class TestDomain {
+public class PlayHeapStackMemory {
 
     private int a = 3;
 
@@ -16,7 +16,7 @@ public class TestDomain {
 
     @Override
     public String toString() {
-        return "TestDomain{" +
+        return "PlayHeapStackMemory{" +
                 "a=" + a +
                 '}';
     }

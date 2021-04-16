@@ -1,4 +1,4 @@
-package org.gourav.mix;
+package org.gourav.puzzle;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.gourav.mix;
+package org.gourav.puzzle;
 
 public class PrintFizzBuzz {
 

@@ -1,4 +1,4 @@
-package org.gourav;
+package org.gourav.puzzle;
 
 public class FinalizeGC {
 

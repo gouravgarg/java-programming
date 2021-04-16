@@ -1,4 +1,4 @@
-package org.gourav.mix;
+package org.gourav.puzzle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
