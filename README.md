@@ -1,4 +1,4 @@
-##Java Practice 
+Java Practice 
 
 1. Test  Stream API
 2. Test  Stream API - Collectors
