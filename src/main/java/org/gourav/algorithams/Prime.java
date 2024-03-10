@@ -1,4 +1,4 @@
-package com.gourav.springboot.al;
+package org.gourav.algorithams;
 
 public class Prime {
     public static void main(String[] args) {
