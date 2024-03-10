@@ -22,14 +22,14 @@ public class TestHostingList2Map {
         list.add(new Hosting(4, "aws.amazon.com", 200000));
         list.add(new Hosting(5, "abc.com", 1));
 
-        final Map<Object, Object> map = list.stream().collect(Collectors.toMap(x -> x.id(), x-> x ));
-        map.keySet().stream().forEach(x-> System.out.println(x + " " + map.get(x)));
+        final Map<Object, Object> map = list.stream().collect(Collectors.toMap(Hosting::id, x-> x ));
+        map.keySet().forEach(x-> System.out.println(x + " " + map.get(x)));
 
         final Map<Object, Object>  map2 = list.stream().collect(Collectors.toMap(Hosting::id,Hosting::name));
-        map2.keySet().stream().forEach(x-> System.out.println(x + " " + map2.get(x)));
+        map2.keySet().forEach(x-> System.out.println(x + " " + map2.get(x)));
 
-        final Map<Object, Object> map3 = list.stream().collect(Collectors.toMap(x -> x.id(), Function.identity()));
-        map3.keySet().stream().forEach(x-> System.out.println(x + " " + map3.get(x)));
+        final Map<Object, Object> map3 = list.stream().collect(Collectors.toMap(Hosting::id, Function.identity()));
+        map3.keySet().forEach(x-> System.out.println(x + " " + map3.get(x)));
 
 
     }

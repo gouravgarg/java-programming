@@ -28,11 +28,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestSP500 {
     List<SP500> sp500s = new ArrayList<>();
-    private long numberOfRows = 23267;
-    private String sourceFile = "src/test/resources/GSPC.csv";
-    private LocalDate closeLowestDate = LocalDate.parse("1932-06-01");
-    private LocalDate closeHighestDate = LocalDate.parse("2020-02-19");
-    private java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
+    private final long numberOfRows = 23267;
+    private final String sourceFile = "src/test/resources/GSPC.csv";
+    private final LocalDate closeLowestDate = LocalDate.parse("1932-06-01");
+    private final LocalDate closeHighestDate = LocalDate.parse("2020-02-19");
+    private final java.text.SimpleDateFormat simpleDateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
 
     @Test
     void playWithDates() throws IOException, ParseException {
@@ -117,6 +117,7 @@ public class TestSP500 {
         try(java.util.stream.Stream<String> stringStream = Files.lines(path)){
             stringStream.skip(1).forEach(line -> {
                 SP500 sp500 = null;
+
                 try {
                     sp500 = new SP500(
                             simpleDateFormat.parse(line.split(",")[0]),
@@ -128,15 +129,15 @@ public class TestSP500 {
                             new BigDecimal(line.split(",")[5]),
                             Long.parseLong(line.split(",")[6]));
                 } catch (ParseException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
+
                 sp500s.add(sp500);
             });
         }
         assertEquals(numberOfRows - 1, sp500s.size());
     }
 
-    @Test
     @RepeatedTest(5)
     public void csvSet() throws IOException {
         try (java.util.stream.Stream<String> stream = Files.lines(Paths.get(sourceFile))) {
@@ -147,7 +148,7 @@ public class TestSP500 {
     @Test
     public void csv2List() throws IOException {
         try (java.util.stream.Stream<String> stream = Files.lines(Paths.get(sourceFile))) {
-            assertEquals(numberOfRows, stream.collect(Collectors.toList()).size());
+            assertEquals(numberOfRows, stream.toList().size());
         }
 
     }
